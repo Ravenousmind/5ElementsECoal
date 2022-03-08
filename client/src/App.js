@@ -15,7 +15,7 @@ function App() {
 
       <Routes>
         <Route exact={true} path="/" element={<Home/>}/>
-        <Route exact={true} path="/articles" element={<Articles/>}/>
+        <Route exact={true} path="/articles" element={<ProtectedRoute><Articles/></ProtectedRoute>}/>
         <Route path="*" element={() => <p>Page Not Found</p>} />
         <Route exact={true} path="/Login" element={<Login/>}/>
       </Routes>
