@@ -38,7 +38,7 @@ function App() {
         <i class="closeIcon material-icons">close</i>
       </button>
     </nav>
-
+<img className="logo_Team" src="/logo_5_elements.png"/>
       <Routes>
         <Route exact={true} path="/" element={<Home/>}/>
         <Route exact={true} path="/articles" element={<ProtectedRoute><Articles/></ProtectedRoute>}/>
