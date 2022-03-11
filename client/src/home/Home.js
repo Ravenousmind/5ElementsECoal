@@ -9,9 +9,13 @@ export default function Home() {
     return (
         <>
         <h1 className="Home_title">
-            My Online Newspaper !!
+           5 Elements Newspaper !!
         </h1>
+
+       
         <p>{msg}</p>
+
+
         
         </>
 

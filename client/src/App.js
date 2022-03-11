@@ -5,12 +5,38 @@ import './App.css'
 import Login, {ProtectedRoute} from "./Login/Login";
 
 function App() {
+  function toggleMenu() {
+    const menu = document.querySelector(".menu");
+    const menuItems = document.querySelectorAll(".menuItem");
+    const hamburger= document.querySelector(".hamburger");
+    const closeIcon= document.querySelector(".closeIcon");
+    const menuIcon = document.querySelector(".menuIcon");
+    
+    
+
+    if (menu.classList.contains("showMenu")) {
+      menu.classList.remove("showMenu");
+      closeIcon.style.display = "none";
+      menuIcon.style.display = "block";
+    } else {
+      menu.classList.add("showMenu");
+      closeIcon.style.display = "block";
+      menuIcon.style.display = "none";
+    }
+  } 
   return (
     <>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/articles">News</Link>
-      <Link to="/Login">Login</Link>
+    <ul className="menu">
+    <li> <Link className="menuItem" onClick={toggleMenu} to="/">Home</Link></li>
+    <li> <Link className="menuItem" onClick={toggleMenu} to="/articles">News</Link></li>
+    <li> <Link className="menuItem" onClick={toggleMenu} to="/Login">Login</Link></li>
+      </ul>
+      <button className="hamburger" onClick={toggleMenu}> 
+        <i class="menuIcon material-icons">menu</i>
+        <i class="closeIcon material-icons">close</i>
+      </button>
     </nav>
 
       <Routes>
@@ -21,6 +47,8 @@ function App() {
       </Routes>
     </>
 );
+
+
 }
 
 export default App;
